@@ -95,7 +95,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1P-zz-9I6" userLabel="retweetCountLabel">
-                                                    <rect key="frame" x="204" y="64.5" width="40" height="30"/>
+                                                    <rect key="frame" x="204" y="64.5" width="50" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="Car-w8-Gnp"/>
                                                         <constraint firstAttribute="height" constant="30" id="ICT-7z-YJc"/>
@@ -105,7 +105,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eq0-i3-gP7" userLabel="likedCountLabel">
-                                                    <rect key="frame" x="295" y="64.5" width="40" height="30"/>
+                                                    <rect key="frame" x="295" y="64.5" width="50" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="269-Fj-Asd"/>
                                                         <constraint firstAttribute="height" constant="30" id="yzG-3b-x15"/>

@@ -47,7 +47,8 @@
     NSDate *date = [formatter dateFromString:createdAtOriginalString];
     formatter.dateStyle = NSDateFormatterShortStyle;
     formatter.timeStyle = NSDateFormatterNoStyle;
-    self.createdAtString = [formatter stringFromDate:date];
+    NSString *modString = [NSDate shortTimeAgoSinceDate:date];
+    self.createdAtString = modString;
 }
 
 + (NSMutableArray *) tweetsWithArray:(NSArray *)dictionaries {
