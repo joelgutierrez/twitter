@@ -38,7 +38,6 @@
         //Format and set createdAtString
         NSString *createdAtOriginalString = dictionary[@"created_at"];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        //TODO: date format 
         formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
         NSDate *date = [formatter dateFromString:createdAtOriginalString];
         formatter.dateStyle = NSDateFormatterShortStyle;

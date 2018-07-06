@@ -7,12 +7,6 @@
 //
 
 #import "TimelineViewController.h"
-#import "APIManager.h"
-#import "TweetCell.h"
-#import "ComposeViewController.h"
-#import "AppDelegate.h"
-#import "LoginViewController.h"
-//#import "UIImageView+AFNetworking.h"
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -68,7 +62,6 @@
     TweetCell *cell = [self.timelineView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];
     Tweet* tweet = self.tweetsArray[indexPath.row];
     cell.tweet = tweet;
-    //cell.userImage.image = nil;
     return cell;
 }
 

@@ -13,14 +13,14 @@
 
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) User *retweetedByUser;
-@property (strong, nonatomic) NSString *idStr; // For fav'ing, retweeting, replying
+@property (strong, nonatomic) NSString *idStr;
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) NSString *createdAtString;
-@property (nonatomic) int favoriteCount; //update fav count label
+@property (nonatomic) int favoriteCount;
 @property (nonatomic) int replyCount;
-@property (nonatomic) int retweetCount; // Update fav count label
-@property (nonatomic) BOOL favorited; // Config favorite button
-@property (nonatomic) BOOL retweeted; // Config retweet button
+@property (nonatomic) int retweetCount;
+@property (nonatomic) BOOL favorited;
+@property (nonatomic) BOOL retweeted;
 
 + (NSMutableArray *) tweetsWithArray:(NSArray *)dictionaries;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;

@@ -19,7 +19,7 @@
     self.nameLabel.text = tweet.user.name;
     [self.userImage setImageWithURL:tweet.user.imageUserURL];
     self.timeLabel.text = tweet.createdAtString;
-    self.usernameLabel.text = tweet.user.screenName;
+    self.usernameLabel.text = [NSString stringWithFormat:@"@%@", tweet.user.screenName];
     self.descriptionTweetLabel.text = tweet.text;
     self.retweetCountLabel.text = [NSString stringWithFormat:@"%d", tweet.retweetCount];
     self.likedCountLabel.text = [NSString stringWithFormat:@"%d", tweet.favoriteCount];
@@ -81,11 +81,9 @@
     }];
 }
 
-
 - (void) refreshData {
     self.retweetCountLabel.text = [NSString stringWithFormat:@"%d", self.tweet.retweetCount];
     self.likedCountLabel.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
-    //update timestamp
 }
 
 @end

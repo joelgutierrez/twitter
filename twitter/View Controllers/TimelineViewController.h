@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIManager.h"
+#import "TweetCell.h"
+#import "ComposeViewController.h"
+#import "AppDelegate.h"
+#import "LoginViewController.h"
 
 @interface TimelineViewController : UIViewController
 
