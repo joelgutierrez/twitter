@@ -21,6 +21,7 @@
         self.verifiedUser = dictionary[@"verified"];
         self.followersCount = [dictionary[@"followers_count"] intValue];
         self.friendsCount = [dictionary[@"friends_count"] intValue];
+        self.imageUserURL = [NSURL URLWithString:dictionary[@"profile_image_url_https"]];
     }
     return self;
 }

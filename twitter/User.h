@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIImageView+AFNetworking.h"
 
 @interface User : NSObject
 
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) UIImageView *userImage;
+@property (strong, nonatomic) NSURL *imageUserURL;
 @property (strong, nonatomic) NSString *screenName;
 @property (strong, nonatomic) NSString *location;
 @property (strong, nonatomic) NSString *url;
@@ -19,7 +22,6 @@
 @property (nonatomic) BOOL verifiedUser;
 @property (nonatomic) int followersCount;
 @property (nonatomic) int friendsCount;
-//@property (strong, nonatomic) NSString *imageUser;
 
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary;
 

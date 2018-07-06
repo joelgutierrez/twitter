@@ -7,7 +7,6 @@
 //
 
 #import "ComposeViewController.h"
-#import "APIManager.h"
 
 @interface ComposeViewController ()
 

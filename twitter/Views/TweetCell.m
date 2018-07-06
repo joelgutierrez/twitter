@@ -7,7 +7,6 @@
 //
 
 #import "TweetCell.h"
-#import "APIManager.h"
 
 @implementation TweetCell
 
@@ -18,12 +17,12 @@
 - (void) setTweet:(Tweet *)tweet {
      _tweet = tweet;
     self.nameLabel.text = tweet.user.name;
-    //self.userAndTimeStamp =
+    [self.userImage setImageWithURL:tweet.user.imageUserURL];
+    self.timeLabel.text = tweet.createdAtString;
     self.usernameLabel.text = tweet.user.screenName;
     self.descriptionTweetLabel.text = tweet.text;
     self.retweetCountLabel.text = [NSString stringWithFormat:@"%d", tweet.retweetCount];
     self.likedCountLabel.text = [NSString stringWithFormat:@"%d", tweet.favoriteCount];
-   
     
     if (self.tweet.favorited) {
         self.likeButton.selected = YES;

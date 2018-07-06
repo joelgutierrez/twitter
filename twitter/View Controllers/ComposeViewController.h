@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Tweet.h"
-
+#import "UIImageView+AFNetworking.h"
+#import "APIManager.h"
 
 @protocol ComposeViewControllerDelegate
 

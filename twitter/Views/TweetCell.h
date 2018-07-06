@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Tweet.h"
+#import "APIManager.h"
 
 @interface TweetCell : UITableViewCell
 
