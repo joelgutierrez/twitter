@@ -100,7 +100,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="Car-w8-Gnp"/>
                                                         <constraint firstAttribute="height" constant="30" id="ICT-7z-YJc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -110,7 +110,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="269-Fj-Asd"/>
                                                         <constraint firstAttribute="height" constant="30" id="yzG-3b-x15"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
