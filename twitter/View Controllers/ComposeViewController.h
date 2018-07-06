@@ -17,7 +17,6 @@
 
 @end
 
-
 @interface ComposeViewController : UIViewController
 
 @property (nonatomic, weak) id<ComposeViewControllerDelegate> delegate;

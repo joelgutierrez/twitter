@@ -16,7 +16,6 @@
 
 @end
 
-
 @implementation ComposeViewController
 
 - (void)viewDidLoad {
@@ -30,16 +29,9 @@
     NSString *newText = [self.composeTextView.text stringByReplacingCharactersInRange:range withString:text];
     
     if(self.composeTextView.text.length < 140){
-        self.characterLabel.text = [NSString stringWithFormat:@"%lu", 140-self.composeTextView.text.length];
-    } else {
-        self.characterLabel.text = @"too many characters";
-    }
-
+        self.characterLabel.text = [NSString stringWithFormat:@"%lu", characterLimit-newText.length];
+    } 
     return newText.length < characterLimit;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - navigation bar actions
@@ -47,6 +39,7 @@
 - (IBAction)didTapClose:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
+
 - (IBAction)didTapPost:(id)sender {
     [[APIManager shared] postStatusWithText:self.composeTextView.text completion:(^(Tweet *tweet, NSError * error) {
         if(error){
