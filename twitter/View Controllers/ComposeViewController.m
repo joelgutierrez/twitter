@@ -21,6 +21,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.composeTextView.delegate = self;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+
+    int characterLimit = 140;
+    NSString *newText = [self.composeTextView.text stringByReplacingCharactersInRange:range withString:text];
+    
+    if(self.composeTextView.text.length < 140){
+        self.characterLabel.text = [NSString stringWithFormat:@"%lu", 140-self.composeTextView.text.length];
+    } else {
+        self.characterLabel.text = @"too many characters";
+    }
+
+    return newText.length < characterLimit;
 }
 
 - (void)didReceiveMemoryWarning {
