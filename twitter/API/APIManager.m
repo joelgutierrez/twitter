@@ -72,15 +72,11 @@ static NSString * const consumerSecret = @"aOj7idSvajvIccr9XzSzowQcitWklNNwYg4Gn
     }];
 }
 
+#pragma mark - favoriting
+
 - (void)favorite:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion{
-    NSString *urlString;
     NSDictionary *parameters = @{@"id": tweet.idStr};
-    
-    if(tweet.favorited) {
-        urlString = @"1.1/favorites/create.json";
-    } else {
-        urlString = @"1.1/favorites/destroy.json";
-    }
+    NSString *urlString = [self setFavoriteURLString:tweet.favorited];
     
     [self POST:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable tweetDictionary) {
         Tweet *tweet = [[Tweet alloc]initWithDictionary:tweetDictionary];
@@ -90,22 +86,38 @@ static NSString * const consumerSecret = @"aOj7idSvajvIccr9XzSzowQcitWklNNwYg4Gn
     }];
 }
 
-- (void)retweet:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion{
-    NSString *urlString;
-    NSDictionary *parameters = @{@"id": tweet.idStr};
-    
-    if(tweet.retweeted) {
-        urlString = [NSString stringWithFormat:@"1.1/statuses/retweet/%@.json", tweet.idStr];
+- (NSString *) setFavoriteURLString:(BOOL)isFavorited{
+    NSString *url = [[NSString alloc] init];
+    if(isFavorited) {
+        url = @"1.1/favorites/create.json";
     } else {
-        urlString = [NSString stringWithFormat:@"1.1/statuses/unretweet/%@.json", tweet.idStr];
+        url = @"1.1/favorites/destroy.json";
     }
-    
+    return url;
+}
+
+#pragma mark - retweeting
+
+- (void)retweet:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion{
+    NSString *urlString = [self setRetweeetedURLString:tweet.retweeted];
+    NSDictionary *parameters = @{@"id": tweet.idStr};
+        
     [self POST:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable tweetDictionary) {
         Tweet *tweet = [[Tweet alloc]initWithDictionary:tweetDictionary];
         completion(tweet, nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         completion(nil, error);
     }];
+}
+
+- (NSString *) setRetweeetedURLString:(BOOL)isRetweeted{
+    NSString *url = [[NSString alloc] init];
+    if(isRetweeted) {
+        url = @"1.1/favorites/create.json";
+    } else {
+        url = @"1.1/favorites/destroy.json";
+    }
+    return url;
 }
 
 @end

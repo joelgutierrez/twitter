@@ -26,21 +26,15 @@
     [self createRefreshControl];
 }
 
-- (void) setDataSourceAndDelegate {
-    self.timelineView.delegate = self;
-    self.timelineView.dataSource = self;
-}
+#pragma mark - networking
 
 - (void) fetchTimeLineTweets {
-    // Get timeline
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSMutableArray *tweets, NSError *error) {
         if (tweets) {
-            NSLog(@"😎😎😎 Successfully loaded home timeline");
             self.tweetsArray = tweets;
             [self.timelineView reloadData];
-            
         } else {
-            NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
+            NSLog(@"Error getting home timeline: %@", error.localizedDescription);
         }
         [self.refreshControl endRefreshing];
     }];
@@ -65,6 +59,11 @@
     return cell;
 }
 
+- (void) setDataSourceAndDelegate {
+    self.timelineView.delegate = self;
+    self.timelineView.dataSource = self;
+}
+
 #pragma mark - compose tweet protocol
 
 - (void)didTweet:(Tweet *)tweet {
@@ -74,7 +73,6 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Pass the selected object to the new view controller.
     UINavigationController *navigationController = [segue destinationViewController];
     ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
     composeController.delegate = self;
@@ -84,10 +82,11 @@
 
 - (IBAction)tapLogoutAction:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     appDelegate.window.rootViewController = loginViewController;
+    
     [[APIManager shared] logout];
 }
 

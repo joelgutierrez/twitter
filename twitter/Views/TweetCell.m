@@ -14,7 +14,7 @@
     [super awakeFromNib];
 }
 
-- (void) setTweet:(Tweet *)tweet {
+- (void) setTweet:(Tweet *)tweet{
      _tweet = tweet;
     self.nameLabel.text = tweet.user.name;
     [self.userImage setImageWithURL:tweet.user.imageUserURL];
@@ -31,12 +31,19 @@
     }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated{
     [super setSelected:selected animated:animated];
 }
 
-- (IBAction)didTapFavorite:(id)sender {
-    if (self.tweet.favorited) {
+#pragma mark - favoriting / unfavoriting
+
+- (IBAction)didTapFavorite:(id)sender{
+    [self updateFavoriteInfo:self.tweet.favorited];
+    [self checkFavoritedSuccess];
+}
+
+- (void) updateFavoriteInfo:(BOOL)isFavorited{
+    if (isFavorited) {
         self.tweet.favoriteCount -= 1;
         self.tweet.favorited = NO;
         self.likeButton.selected = NO;
@@ -45,9 +52,10 @@
         self.tweet.favorited = YES;
         self.likeButton.selected = YES;
     }
+    self.likedCountLabel.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
+}
 
-    [self refreshData];
-    
+- (void) checkFavoritedSuccess{
     [[APIManager shared] favorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
         if(error){
             NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
@@ -58,8 +66,26 @@
     }];
 }
 
-- (IBAction)didTapRetweet:(id)sender {
-    if (self.tweet.retweeted) {
+#pragma mark - retweeting / unretweeting
+
+- (IBAction)didTapRetweet:(id)sender{
+    [self updateRetweetInfo:self.tweet.retweeted];
+    [self checkRetweetedSuccess];
+}
+
+- (void) checkRetweetedSuccess{
+    [[APIManager shared] retweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
+        if(error){
+            NSLog(@"Error retweeting: %@", error.localizedDescription);
+        }
+        else{
+            NSLog(@"Successfully retweeted the following Tweet: %@", tweet.text);
+        }
+    }];
+}
+
+- (void) updateRetweetInfo:(BOOL)isRetweeted{
+    if(isRetweeted){
         self.tweet.retweetCount -= 1;
         self.tweet.retweeted = NO;
         self.retweetButton.selected = NO;
@@ -68,22 +94,7 @@
         self.tweet.retweeted = YES;
         self.retweetButton.selected = YES;
     }
-    
-    [self refreshData];
-    
-    [[APIManager shared] retweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
-        if(error){
-            NSLog(@"Error retweet: %@", error.localizedDescription);
-        }
-        else{
-            NSLog(@"Successfully retweeted the following Tweet: %@", tweet.text);
-        }
-    }];
-}
-
-- (void) refreshData {
     self.retweetCountLabel.text = [NSString stringWithFormat:@"%d", self.tweet.retweetCount];
-    self.likedCountLabel.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
 }
 
 @end
