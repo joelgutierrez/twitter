@@ -9,7 +9,7 @@ https://paper.dropbox.com/doc/Twitter--ADuVCVvwop_njSNAbUU96Q2VAQ-g255BPX3K4X7G0
 # Project 4 - *Twitter*
 
 **Twitter** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
-Time spent: **X** hours spent in total
+Time spent: **26** hours spent in total
 
 ## User Stories
 The following **required** functionality is completed:
@@ -54,9 +54,8 @@ The following **additional** features are implemented:
 - [x] autolayout for compose view tweet
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
-
-1. 
-2.
+1. how to go about setting up, from scratch, working with a new api
+2. i liked working with autolayout, but i would want to know some additional features.
 
 ## Video Walkthrough
 Here's a walkthrough of implemented user stories:
@@ -66,10 +65,14 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-Describe any challenges encountered while building the app.
+Spent a good while trying to debug something that was actually working.
+Hence no debugging was necessary.
+Was a little tough at the start, due to the amount of files, keeping track of the program flow.
 
 ## Credits
-List an 3rd party libraries, icons, graphics, or other assets you used in your app.
+DateTools
+AFNetworking
+Twitter
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
