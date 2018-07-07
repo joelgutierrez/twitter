@@ -70,11 +70,9 @@ Hence no debugging was necessary.
 Was a little tough at the start, due to the amount of files, keeping track of the program flow.
 
 ## Credits
-DateTools
-AFNetworking
-Twitter
-
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+[DateTools](github.com/MatthewYork/DateTools) - data formatting library
+[Twitter API](developer.twitter.com/en/docs.html) - Twitter API library
+[AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
 ## License
 Copyright [2018] [Joel Gutierrez]

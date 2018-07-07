@@ -29,6 +29,12 @@
     } else {
         self.likeButton.selected = NO;
     }
+    
+    if(self.tweet.retweeted) {
+        self.retweetButton.selected = YES;
+    } else {
+        self.retweetButton.selected = NO;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{
