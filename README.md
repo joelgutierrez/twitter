@@ -51,6 +51,7 @@ The following **additional** features are implemented:
 
 - [x] refactored my code. not an app implementation but noteworthy?!
 - [x] prepended screenname with "@" when displaying in home timeline
+- [x] autolayout for compose view tweet
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 

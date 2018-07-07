@@ -257,29 +257,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Type something!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pl3-wL-WF9">
-                                <rect key="frame" x="67" y="126" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type something!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pl3-wL-WF9">
+                                <rect key="frame" x="16" y="64" width="343" height="190"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="Eec-8c-ER6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="te4-hu-HG7">
-                                <rect key="frame" x="197" y="262" width="37" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="te4-hu-HG7">
+                                <rect key="frame" x="143" y="283" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Characters Left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzI-gb-bIt">
-                                <rect key="frame" x="67" y="262" width="124" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters Left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzI-gb-bIt">
+                                <rect key="frame" x="16" y="262" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pl3-wL-WF9" firstAttribute="top" secondItem="bHj-tn-f4T" secondAttribute="top" id="0Y8-ym-E9E"/>
+                            <constraint firstItem="WzI-gb-bIt" firstAttribute="leading" secondItem="pl3-wL-WF9" secondAttribute="leading" id="9fg-46-aAY"/>
+                            <constraint firstItem="te4-hu-HG7" firstAttribute="bottom" secondItem="WzI-gb-bIt" secondAttribute="bottom" id="NXJ-cN-usa"/>
+                            <constraint firstItem="WzI-gb-bIt" firstAttribute="top" secondItem="pl3-wL-WF9" secondAttribute="bottom" constant="8" id="Ox4-Uc-57p"/>
+                            <constraint firstItem="te4-hu-HG7" firstAttribute="leading" secondItem="WzI-gb-bIt" secondAttribute="trailing" constant="3" id="aFi-Lc-ZfP"/>
+                            <constraint firstItem="bHj-tn-f4T" firstAttribute="trailing" secondItem="pl3-wL-WF9" secondAttribute="trailing" constant="16" id="ueI-tG-52N"/>
+                            <constraint firstItem="pl3-wL-WF9" firstAttribute="leading" secondItem="bHj-tn-f4T" secondAttribute="leading" constant="16" id="x8b-Rn-Xa3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bHj-tn-f4T"/>
                     </view>
                     <navigationItem key="navigationItem" id="4b9-LJ-WGb">
